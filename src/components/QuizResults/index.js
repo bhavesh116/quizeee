@@ -162,7 +162,7 @@ const QuizResults = (props) => {
             <Label size={25}>Your Challenge Is Ready</Label>
             <Label color="purple"size={17}>Share this link with your friends</Label>
             <SendToDiv>
-            <a  href={`https://api.whatsapp.com/send?text=%F0%9F%A4%9C%20${quizData.userName}%20has%20sent%20you%20new%20*Coronavirus%20Challenge*%20%F0%9F%91%B8%F0%9F%A4%B4%EF%B8%8F%0A*Accept%20this%20Challenge%20NOW*%20%0A%E2%80%BC%EF%B8%8F%F0%9F%91%87%F0%9F%91%87%F0%9F%91%87%F0%9F%91%87%F0%9F%91%87%F0%9F%91%87%E2%80%BC%EF%B8%8F%20%0A%20%20https://quizee.com/quiz/${quizId}`}>
+            <a  href={`https://api.whatsapp.com/send?text=%F0%9F%A4%9C%20${quizData.userName}%20has%20sent%20you%20new%20*Coronavirus%20Challenge*%20%F0%9F%91%B8%F0%9F%A4%B4%EF%B8%8F%0A*Accept%20this%20Challenge%20NOW*%20%0A%E2%80%BC%EF%B8%8F%F0%9F%91%87%F0%9F%91%87%F0%9F%91%87%F0%9F%91%87%F0%9F%91%87%F0%9F%91%87%E2%80%BC%EF%B8%8F%20%0A%20%20https://quizee.netlify.app//quiz/${quizId}`}>
             <IconDivWrap color="green">
             <IcomImg send src="https://i.ibb.co/51TNRQw/whatsapp.png"/>
             <div>Whatsapp Status</div>
@@ -175,7 +175,7 @@ const QuizResults = (props) => {
             </IconDivWrap>
             </a>
             </SendToDiv>
-              <LinkDiv><div>{`https://quizee.com/quiz/${quizId}`}</div><IcomImg onClick={() => copyToClip(`https://quizee.com/quiz/${quizId}`)} src="https://i.ibb.co/Z2Vwmy8/copy.png"/></LinkDiv>
+              <LinkDiv><div>{`https://quizee.netlify.app/quiz/${quizId}`}</div><IcomImg onClick={() => copyToClip(`https://quizee.com/quiz/${quizId}`)} src="https://i.ibb.co/Z2Vwmy8/copy.png"/></LinkDiv>
             <Label size={23}>Who Knows You Best</Label>
             <Dashboard>
               <Tr>
