@@ -8,6 +8,7 @@ const Footer = styled.div`
  align-items: flex-end;
  display: flex;
  font-size: 20px;
+ text-align: center;
  color: grey;
 `
 
