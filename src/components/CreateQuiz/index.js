@@ -133,8 +133,6 @@ const CreateQuiz = (props) => {
       quizIndex: 0
     }
 
-    console.log('props are', props)
-
     const reducer = (prevState, nextState) => ({...prevState, ...nextState})
     const [state, updateState] = useReducer(reducer, initialState)
 
@@ -150,7 +148,7 @@ const CreateQuiz = (props) => {
 
     useEffect(() => {
       if(Object.keys(createdQuizData).length > 0) {
-        history.push(`/quizResults/${createdQuizData.quizId}`)
+        history.replace(`/quizResults/${createdQuizData.quizId}`)
       }
     }, [createdQuizData])
 

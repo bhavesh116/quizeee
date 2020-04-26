@@ -219,14 +219,13 @@ const CreateQuiz = (props) => {
 
     const { history, match: {params: { quizId} } } = props
 
-    console.log('props', props)
     useEffect(() => {
       dispatch(getQuizDataInitiate(quizId))
     }, [quizSubmitBool])
 
     useEffect(() => {
       if (getQuizError) {
-          history.push('/createQuiz')
+          history.replace('/createQuiz')
       }
     }, [getQuizError])
 
@@ -382,7 +381,7 @@ const CreateQuiz = (props) => {
                       onClick={() => {
                         setTimeout(() => {
                             sessionStorage.clear()
-                            history.push('/createQuiz')
+                            history.replace('/createQuiz')
                         }, 400)}}
                      >Create your own Quiz</CreateTryButton>
                     <CreateTryButton 
