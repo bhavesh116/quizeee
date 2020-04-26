@@ -53,8 +53,13 @@ const Label = styled.div`
   font-size: ${size}px;
   text-align: center;
  `}
+ ${({choice}) => choice && css`
+   font-size: 19px;
+   padding: 0px 5px;
+   text-align: center;
+ `}
  ${({required}) => required && css`
- color: red;
+   color: red;
  `}
 `
 
@@ -94,7 +99,7 @@ const Button = styled.div`
 const ChoicesWrapper = styled.div`
  display: grid;
  width: 100%;
- grid-template-columns: auto auto;
+ grid-template-columns: 1fr 1fr;
 `
 
 const StyledImage = styled.img`
@@ -336,7 +341,7 @@ const CreateQuiz = (props) => {
                                </ChoiceItem>
                              }   
                              <StyledImage src={data.choiceImg}/>
-                             <Label>{data.choiceName}</Label>
+                             <Label choice>{data.choiceName}</Label>
                            </ImageContainer>
                          )
                        })
