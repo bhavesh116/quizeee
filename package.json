@@ -1,6 +1,7 @@
 {
   "name": "quizee",
   "version": "0.1.0",
+  "homepage":"https://quizee.netlify.app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -24,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && echo '/* /index.html  200'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
