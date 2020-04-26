@@ -370,8 +370,8 @@ const CreateQuiz = (props) => {
                   </div>
                   :
                   <div>
-                  <Label size={20}>{`${quizData.userName} has invited you for Coronavirus 2020 dare test`}</Label>
-                  <Label size={20}>{`Lets see how well you know ${quizData.userName} ?`}</Label>
+                  <Label size={20}>{`${quizData.userName || ''} has invited you for Coronavirus 2020 dare test`}</Label>
+                  <Label size={20}>{`Lets see how well you know ${quizData.userName || ''} ?`}</Label>
                   </div>
              }
             {   sessionStorage.getItem('quizScore') ?
@@ -407,7 +407,7 @@ const CreateQuiz = (props) => {
                   </Button>
                </ActionContainer>
             } 
-            <Label size={23}>{`Who Knows ${quizData.userName} Best`}</Label>
+            <Label size={23}>{`Who Knows ${quizData.userName || ''} Best`}</Label>
             <Dashboard>
                <Tr>
                  <Th>Name</Th>

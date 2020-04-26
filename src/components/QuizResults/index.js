@@ -32,9 +32,10 @@ const Label = styled.div`
 
 const LinkDiv = styled.div`
  height: 40px;
- width: 90%;
+ width: 100%;
  display: flex;
  margin-bottom: 30px;
+ font-size: 14px;
  justify-content: space-between;
  padding: 0px 5px;
  align-items: center;
@@ -95,7 +96,7 @@ const IconDivWrap = styled.div`
 const Toaster = styled.div`
  position: absolute;
  display: flex;
- top: 45%;
+ top: 49%;
  opacity: 0.9;
  left: 52%;
  background-color: #f1f1f1;
