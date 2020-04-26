@@ -1,0 +1,96 @@
+{
+    "devUrl": "http://localhost:8082",
+        "questionsData": [
+            {"ques":"What did {} do whole day during lockdown ?",
+                "quesId":1,  
+                "choices": [
+                    {"choiceName":"Pubg", "choiceImg":"https://i.ibb.co/gFXmb8M/pubg-PNG56.png"},
+                    {"choiceName":"Sleep", "choiceImg":"https://i.ibb.co/K5JdGN8/panda.png"},
+                    {"choiceName":"Study", "choiceImg":"https://i.ibb.co/kXRTW3H/read.png"},
+                    {"choiceName":"Tv shows", "choiceImg":"https://i.ibb.co/W0q6D9P/television.png"}
+                   ]
+            },
+            {"ques":"What will {} do if they get corona virus ?",
+             "alt":"What will you do if you get corona virus ?",
+                "quesId":2,  
+                "choices": [
+                    {"choiceName":"Go to doctor", "choiceImg":"https://i.ibb.co/8dJBrLY/doctor.png"},
+                    {"choiceName":"will die", "choiceImg":"https://i.ibb.co/ym978h3/spirit.png"},
+                    {"choiceName":"Secretly spread it", "choiceImg":"https://i.ibb.co/2YhqTWZ/protection.png"},
+                    {"choiceName":"stay self quaranrined", "choiceImg":"https://i.ibb.co/QmmQBc7/stay-home.png"}
+                   ]
+            },
+            {"ques":"What is the first thing {} will do when lockdown ends ?",
+                "quesId":3,  
+                "choices": [
+                    {"choiceName":"Go to a movie", "choiceImg":"https://i.ibb.co/pvgykgL/3d-glasses.png"},
+                    {"choiceName":"try new restaurant", "choiceImg":"https://i.ibb.co/0fBwqVr/noodles.png"},
+                    {"choiceName":"still stay at home", "choiceImg":"https://i.ibb.co/QmmQBc7/stay-home.png"},
+                    {"choiceName":"meet friends", "choiceImg":"https://i.ibb.co/HpNWb2M/sharing.png"}
+                   ]
+            },
+            {"ques":"What new qualities did {} gain during lockdown ?",
+                "quesId":4,  
+                "choices": [
+                    {"choiceName":"home chef", "choiceImg":"https://i.ibb.co/NFqGz19/cooking.png"},
+                    {"choiceName":"reading", "choiceImg":"https://i.ibb.co/kXRTW3H/read.png"},
+                    {"choiceName":"cleaning", "choiceImg":"https://i.ibb.co/9nDVs5N/cleaning.png"},
+                    {"choiceName":"sleeping till afternoon", "choiceImg":"https://i.ibb.co/K5JdGN8/panda.png"}
+                   ]
+            },
+            {"ques":"How many new relationships did {} make in tinder during quarantime ?",
+                "quesId":5,  
+                "choices": [
+                    {"choiceName":"one", "choiceImg":"https://i.ibb.co/5KCh3DB/one.png"},
+                    {"choiceName":"zero", "choiceImg":"https://i.ibb.co/vZLHLpy/zero.png"},
+                    {"choiceName":"many", "choiceImg":"https://i.ibb.co/D1vqZV3/horseshoe-outline-with-many-holes.png"},
+                    {"choiceName":"did not install tinder", "choiceImg":"https://i.ibb.co/VgfgTyS/unmatch.png"}
+                   ]
+            },
+            {"ques":"What did {} miss the most during lockdown?",
+                "quesId":6,  
+                "choices": [
+                    {"choiceName":"meeting friends", "choiceImg":"https://i.ibb.co/HpNWb2M/sharing.png"},
+                    {"choiceName":"restaurant food", "choiceImg":"https://i.ibb.co/NFqGz19/cooking.png"},
+                    {"choiceName":"travelling", "choiceImg":"https://i.ibb.co/hY6WWRJ/travelling.png"},
+                    {"choiceName":"partner", "choiceImg":"https://i.ibb.co/8P1wtMg/lover.png"}
+                   ]
+            },
+            {"ques":"What food {} miss the most during lockdown",
+                "quesId":7,  
+                "choices": [
+                    {"choiceName":"north indian", "choiceImg":"https://i.ibb.co/KDwZtJ7/chicken-bucket.png"},
+                    {"choiceName":"south indian", "choiceImg":"https://i.ibb.co/wMQjnPt/burrito.png"},
+                    {"choiceName":"junk food", "choiceImg":"https://i.ibb.co/nccSkxM/churros.png"},
+                    {"choiceName":"street food", "choiceImg":"https://i.ibb.co/y6ym5L9/hot-dog.png"}
+                   ]
+            },
+            {"ques":"Where does {} wants to go once covid-19 ends ?",
+             "alt": "Where do you want to go once covid-19 ends ?",
+                "quesId":8,  
+                "choices": [
+                    {"choiceName":"Paris", "choiceImg":"https://i.ibb.co/HHHqn9C/eiffel-tower.png"},
+                    {"choiceName":"New york", "choiceImg":"https://i.ibb.co/HC7W6PJ/statue-of-liberty.png"},
+                    {"choiceName":"Stay home", "choiceImg":"https://i.ibb.co/QmmQBc7/stay-home.png"},
+                    {"choiceName":"China", "choiceImg":"https://i.ibb.co/2YhqTWZ/protection.png"}
+                   ]
+            },
+            {"ques":"Which app {} used the most during quarantine ?",
+                "quesId":9,  
+                "choices": [
+                    {"choiceName":"instagram", "choiceImg":"https://i.ibb.co/0rkDtXH/instagram.png"},
+                    {"choiceName":"facebook", "choiceImg":"https://i.ibb.co/5hD91tf/facebook.png"},
+                    {"choiceName":"tiktok", "choiceImg":"https://i.ibb.co/SVYyZhj/brand.png"},
+                    {"choiceName":"youtube", "choiceImg":"https://i.ibb.co/zV629Gf/youtube.png"}
+                   ]
+            },
+            {"ques":"how would {} like to be treated when meeting their friends after lockdown?",
+                "quesId":10,  
+                "choices": [
+                    {"choiceName":"hugs", "choiceImg":"https://i.ibb.co/Rpvr7zf/love.png"},
+                    {"choiceName":"kisses", "choiceImg":"https://i.ibb.co/f21PJLM/kiss.png"},
+                    {"choiceName":"social distancing", "choiceImg":"https://i.ibb.co/Chmhqd4/keep-distance.png"}
+                   ]
+            }
+        ]
+}
