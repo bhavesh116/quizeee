@@ -57,7 +57,7 @@
                     {"choiceName":"partner", "choiceImg":"https://i.ibb.co/8P1wtMg/lover.png"}
                    ]
             },
-            {"ques":"What food {} miss the most during lockdown",
+            {"ques":"What food did {} miss the most during lockdown",
                 "quesId":7,  
                 "choices": [
                     {"choiceName":"north indian", "choiceImg":"https://i.ibb.co/KDwZtJ7/chicken-bucket.png"},
@@ -85,7 +85,8 @@
                     {"choiceName":"youtube", "choiceImg":"https://i.ibb.co/zV629Gf/youtube.png"}
                    ]
             },
-            {"ques":"how would {} like to be treated when meeting their friends after lockdown?",
+            {"ques":"how would {} like to be treated when meeting their friends after lockdown ?",
+             "alt":"how would you like to be treated when meeting your friends after lockdown ?",
                 "quesId":10,  
                 "choices": [
                     {"choiceName":"hugs", "choiceImg":"https://i.ibb.co/Rpvr7zf/love.png"},
