@@ -7,12 +7,13 @@ const initialState = {
    quizData: {},
    submitQuizLoader: false,
    quizSubmitBool: false,
+   getQuizError: false,
 }
 
 export default function quizReducer(state = initialState, { type, payload }) {
   switch (type) {
     case quizActions.CREATE_NEW_QUIZ_INITIATE:
-      return { ...state, createQuizLoader: true }
+      return { ...state, createQuizLoader: true, getQuizError: false }
 
     case quizActions.CREATE_NEW_QUIZ_SUCCESS:
       return { ...state, createQuizLoader: false, createdQuizData: payload }
@@ -21,13 +22,13 @@ export default function quizReducer(state = initialState, { type, payload }) {
       return { ...state, createQuizLoader: false }
 
     case quizActions.GET_QUIZ_DATA_INITIATE:
-        return { ...state, getQuizDataLoader: true }
+        return { ...state, getQuizDataLoader: true, getQuizError: false }
   
     case quizActions.GET_QUIZ_DATA_SUCCESS:
         return { ...state, getQuizDataLoader: false, quizData: payload }
   
     case quizActions.GET_QUIZ_DATA_FAILURE:
-        return { ...state, getQuizDataLoader: false }
+        return { ...state, getQuizDataLoader: false, getQuizError: true  }
 
     case quizActions.SUBMIT_QUIZ_INITIATE:
       return { ...state, submitQuizLoader: true }

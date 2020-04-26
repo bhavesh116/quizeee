@@ -27,6 +27,7 @@ export function* getQuizSaga({payload}) {
        const res = yield axios.get(`${devUrl}/quiz/${payload}`)
        yield put(getQuizDataSuccess(res.data.data))
     } catch (err) {
+       console.log('err',err)
        yield put(getQuizDataIFailure(err.response.data || err))
     }
 }

@@ -1,5 +1,6 @@
 {
-    "devUrl": "http://localhost:8082",
+    "devUrl": "https://quizee-app.herokuapp.com",
+    "devUrl2": "http://localhost:8082",
         "questionsData": [
             {"ques":"What did {} do whole day during lockdown ?",
                 "quesId":1,  

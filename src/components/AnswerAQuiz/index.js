@@ -213,14 +213,22 @@ const CreateQuiz = (props) => {
     const  {
         getQuizDataLoader,
         quizData,
-        quizSubmitBool
+        quizSubmitBool,
+        getQuizError
       } = quizState
 
     const { history, match: {params: { quizId} } } = props
 
+    console.log('props', props)
     useEffect(() => {
       dispatch(getQuizDataInitiate(quizId))
     }, [quizSubmitBool])
+
+    useEffect(() => {
+      if (getQuizError) {
+          history.push('/createQuiz')
+      }
+    }, [getQuizError])
 
     const handleChange = (path, value) => {
       const upStat = cloneDeep(state)
@@ -373,6 +381,7 @@ const CreateQuiz = (props) => {
                       bgColor="green"
                       onClick={() => {
                         setTimeout(() => {
+                            sessionStorage.clear()
                             history.push('/createQuiz')
                         }, 400)}}
                      >Create your own Quiz</CreateTryButton>
@@ -430,7 +439,10 @@ const CreateQuiz = (props) => {
               }
             </CreateQuizCard>          
            }
-           <CommonFooter/>
+           { 
+           !state.startQuiz &&
+             <CommonFooter/>
+           }
         </Wrapper>   
     )
 }

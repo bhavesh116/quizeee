@@ -118,6 +118,9 @@ const QuizIndicator = styled.div`
 const GeneratingQuizDiv= styled.div`
  height: 100%;
  color: grey;
+ display: flex;
+ align-items: center;
+ justify-content: center;
  font-size: 27px;
 `
 const { questionsData } = config 
@@ -129,6 +132,8 @@ const CreateQuiz = (props) => {
       quesAndAns: [],
       quizIndex: 0
     }
+
+    console.log('props are', props)
 
     const reducer = (prevState, nextState) => ({...prevState, ...nextState})
     const [state, updateState] = useReducer(reducer, initialState)
@@ -238,7 +243,10 @@ const CreateQuiz = (props) => {
             </CreateQuizCard>
             : <GeneratingQuizDiv>Generating Your Quiz...</GeneratingQuizDiv>
            }
-           <CommonFooter/>
+           { 
+           !state.startQuiz && !createQuizLoader &&
+             <CommonFooter/>
+           }
         </Wrapper>   
     )
 }
