@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Loader from 'react-loader-spinner'
 import styled, {css} from 'styled-components'
 import { getQuizDataInitiate ,submitQuizInitiate } from '../../redux/actions/quizActions'
 import { cloneDeep } from 'lodash'
@@ -192,7 +193,13 @@ const CreateTryButton = styled.div`
  transform: translateY(3px)
  }
 `
-
+const LoaderWrapper = styled.div`
+ height: 100%;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+`
 
 const { questionsData } = config 
 const CreateQuiz = (props) => {
@@ -358,94 +365,110 @@ const CreateQuiz = (props) => {
     return (
         <Wrapper>
            <CommonHeader/>
-           { 
-           !state.startQuiz ?
-             <CreateQuizCard>  
-             {
-                 sessionStorage.getItem('quizScore') ?
-                 <div>
-                 <GaugeChart id="gauge-chart3" 
-                    nrOfLevels={30} 
-                    colors={["#FF5F6D", "#FFC371", "#52de97"]} 
-                    arcWidth={0.3} 
-                    textColor="black"
-                    percent={parseInt(sessionStorage.getItem('quizScore')) * 0.1} 
-                  />
-                  <Label size={24}>Your Score</Label>
-                  </div>
-                  :
+          {
+           !sessionStorage.getItem('quizScore') && getQuizDataLoader ?
+            <LoaderWrapper>
+              <Loader
+                type="Hearts" 
+                color="#d597ce" 
+                height={90}
+                width={90}
+              />
+           </LoaderWrapper> 
+          :
+            <div>
+            { 
+            !state.startQuiz ?
+              <CreateQuizCard>  
+              {
+                  sessionStorage.getItem('quizScore') ?
                   <div>
-                  <Label size={20}>{`${quizData.userName || ''} has invited you for Coronavirus 2020 dare test`}</Label>
-                  <Label size={20}>{`Lets see how well you know ${quizData.userName || ''} ?`}</Label>
-                  </div>
-             }
-            {   sessionStorage.getItem('quizScore') ?
-                <CreateOrTry>
-                    <CreateTryButton 
-                      bgColor="green"
-                      onClick={() => {
-                        setTimeout(() => {
-                            sessionStorage.clear()
-                            history.replace('/createQuiz')
-                        }, 400)}}
-                     >Create your own Quiz</CreateTryButton>
-                    <CreateTryButton 
-                      bgColor="purple"
-                      onClick={() => {
-                      setTimeout(() => {
-                       sessionStorage.clear()
-                       updateState({
-                           ...initialState
-                       })
-                      }, 400)}}
-                    >Try again</CreateTryButton>
-                </CreateOrTry>
-                :
-                <ActionContainer bottom>
-                <Label required={state.required}>Enter your full name:</Label>
-                <StyledInput 
-                  onChange={(event) => handleChange('name', event.target.value)}
-                  value={state.name}
-                  />
-                  <Button onClick={() => state.name.length > 1 ? setTimeout(() => handleChange('startQuiz',true), 300)  : handleChange('required', true)}>
-                      Start
-                  </Button>
-               </ActionContainer>
-            } 
-            <Label size={23}>{`Who Knows ${quizData.userName || ''} Best`}</Label>
-            <Dashboard>
-               <Tr>
-                 <Th>Name</Th>
-                 <Th>Score</Th>
-               </Tr>
-              {
-                quizData.results && quizData.results.length > 0 ? 
-                getAccendingResult(quizData.results).map(itm => {
-                return (
-                    <Tr>
-                    <Td>{itm.name}</Td>
-                    <Td>{itm.score}</Td>
-                    </Tr>
-                )
-                })
-                : 
+                  <GaugeChart id="gauge-chart3" 
+                     nrOfLevels={30} 
+                     colors={["#FF5F6D", "#FFC371", "#52de97"]} 
+                     arcWidth={0.3} 
+                     textColor="black"
+                     percent={parseInt(sessionStorage.getItem('quizScore')) * 0.1} 
+                   />
+                   <Label size={24}>Your Score</Label>
+                   </div>
+                   :
+                   <div>
+                   <Label size={20}>{`${quizData.userName || ''} has invited you for Coronavirus 2020 dare test`}</Label>
+                   <Label size={20}>{`Lets see how well you know ${quizData.userName || ''} ?`}</Label>
+                   </div>
+              }
+             {   sessionStorage.getItem('quizScore') ?
+                 <CreateOrTry>
+                     <CreateTryButton 
+                       bgColor="green"
+                       onClick={() => {
+                         setTimeout(() => {
+                             sessionStorage.clear()
+                             history.replace('/createQuiz')
+                         }, 400)}}
+                      >Create your own Quiz</CreateTryButton>
+                     <CreateTryButton 
+                       bgColor="purple"
+                       onClick={() => {
+                       setTimeout(() => {
+                        sessionStorage.clear()
+                        updateState({
+                            ...initialState
+                        })
+                       }, 400)}}
+                     >Try again</CreateTryButton>
+                 </CreateOrTry>
+                 :
+                 <ActionContainer bottom>
+                 <Label required={state.required}>Enter your full name:</Label>
+                 <StyledInput 
+                   onChange={(event) => handleChange('name', event.target.value)}
+                   value={state.name}
+                   />
+                   <Button onClick={() => state.name.length > 1 ? setTimeout(() => handleChange('startQuiz',true), 300)  : handleChange('required', true)}>
+                       Start
+                   </Button>
+                </ActionContainer>
+             } 
+             <Label size={23}>{`Who Knows ${quizData.userName || ''} Best`}</Label>
+             <Dashboard>
                 <Tr>
-                <Td></Td>
-                <Td></Td>
+                  <Th>Name</Th>
+                  <Th>Score</Th>
                 </Tr>
-              }
-            </Dashboard>    
-            </CreateQuizCard>
-            : 
-            <CreateQuizCard>
-              {
-                  getQuiz(questionDataMerged(questionsData, quizData.quizDetails))
-              }
-            </CreateQuizCard>          
-           }
+               {
+                 quizData.results && quizData.results.length > 0 ? 
+                 getAccendingResult(quizData.results).map(itm => {
+                 return (
+                     <Tr>
+                     <Td>{itm.name}</Td>
+                     <Td>{itm.score}</Td>
+                     </Tr>
+                 )
+                 })
+                 : 
+                 <Tr>
+                 <Td></Td>
+                 <Td></Td>
+                 </Tr>
+               }
+             </Dashboard>    
+             </CreateQuizCard>
+             : 
+             <CreateQuizCard>
+               {
+                   getQuiz(questionDataMerged(questionsData, quizData.quizDetails))
+               }
+             </CreateQuizCard>          
+            }
+            </div>
+          }
            { 
            !state.startQuiz &&
+           
              <CommonFooter/>
+             
            }
         </Wrapper>   
     )
